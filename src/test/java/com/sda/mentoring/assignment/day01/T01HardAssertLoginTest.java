@@ -32,9 +32,9 @@ https://claruswaysda.github.io/signIn.html
         driver.findElement(By.xpath("//input[@type=\"submit\"]")).click();
 
         //assert the url
-        String actualurl ="https://claruswaysda.github.io/signIn.html";
+       // String actualurl ="https://claruswaysda.github.io/signIn.html";
         String expectedurl ="https://claruswaysda.github.io/signIn.html";
-        Assert.assertEquals(actualurl,expectedurl,"Url not mach");
+        Assert.assertEquals(driver.getCurrentUrl(),expectedurl,"Url not mach");
 
     }
 
