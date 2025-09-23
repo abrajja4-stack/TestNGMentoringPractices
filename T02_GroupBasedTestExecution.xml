@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+
+    <test verbose="2" preserve-order="true" name="SmokerTests">
+        <!-- Run only the smoke group -->
+        <groups>
+            <run>
+                <include name="smoke"> </include>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.sda.mentoring.assignment.day02.T02GroupBasedTestExcution"></class>
+        </classes>
+        
+    </test>
+
+    <test verbose="2" preserve-order="true" name="regression Tests">
+        <groups>
+            <!-- Run only the Regression group -->
+            <run>
+                <include name="regression"> </include>
+                <!--  Exclude  Smpke group -->
+                <exclude name="smoke"></exclude>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.sda.mentoring.assignment.day02.T02GroupBasedTestExcution"></class>
+        </classes>
+
+    </test>
+
+    <test verbose="2" preserve-order="true" name="api Tests">
+        <groups>
+            <run>
+                <!-- Run only the api group -->
+                <include name="api"> </include>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.sda.mentoring.assignment.day02.T02GroupBasedTestExcution">
+                <methods>
+                    <!-- Exclude the onlu this method from the group -->
+                    <exclude name="testApi01"></exclude>
+                </methods>
+            </class>
+            
+        </classes>
+
+    </test>
+</suite>
