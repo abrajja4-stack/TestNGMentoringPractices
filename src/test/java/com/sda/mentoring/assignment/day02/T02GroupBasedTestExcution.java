@@ -19,7 +19,7 @@ public class T02GroupBasedTestExcution {
     void testRegression01(){
         System.out.println(" regression test 1");}
 
-    @Test (groups = "regression", description = " test group regression")
+    @Test (groups ={ "regression" , "smoke"}, description = " test group regression")
     void testRegression02(){
         System.out.println(" regression test2");
     }
