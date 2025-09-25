@@ -15,6 +15,7 @@ public class T02GroupBasedTestExcution {
         System.out.println(" smoke test 2");
     }
 
+
     @Test (groups = "regression", description = " test  group regression")
     void testRegression01(){
         System.out.println(" regression test 1");}

@@ -32,6 +32,7 @@ SoftAssertLoginTest
     @Test
     public void testSoftAssertLogin() throws InterruptedException {
         //navgit and login Not successful
+
         driver.get("https://claruswaysda.github.io/signIn.html");
         driver.findElement(By.xpath("//input[@id=\"username\"]")).sendKeys("wronguser");
         driver.findElement(By.xpath("//input[@id=\"password\"]")).sendKeys("wrongpass");

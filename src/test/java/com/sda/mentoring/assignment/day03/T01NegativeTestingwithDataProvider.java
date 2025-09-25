@@ -53,6 +53,7 @@ public class T01NegativeTestingwithDataProvider  extends TestBase {
             Assert.assertEquals(validationMessage, "Please fill out this field.");
 
         } else {
+
             // Handle incorrect credentials (both fields have values)
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.alertIsPresent());

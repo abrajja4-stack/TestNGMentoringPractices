@@ -40,6 +40,7 @@ Do it with all 3 ways
         driver.findElement(By.id("ageInput")).sendKeys(age);
         new Select(driver.findElement(By.id("countrySelect"))).selectByVisibleText(visibleText);
         driver.findElement(By.xpath("//*[.='Add Record']")).click();
+
     }
 
     @Test(dataProvider = "getData03",dataProviderClass = com.sda.mentoring.utilities.DataProviderUtilities.class)

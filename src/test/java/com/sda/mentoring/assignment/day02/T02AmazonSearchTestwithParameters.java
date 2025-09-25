@@ -18,6 +18,7 @@ public class T02AmazonSearchTestwithParameters extends TestBase {
 
     @Test
     @Parameters("KeyWord")
+
     public void testParsmeters(@Optional("C++") String keyWord) throws InterruptedException {
         // 1. Navigate to: https://www.amazon.com
         driver.get("https://www.amazon.com");
