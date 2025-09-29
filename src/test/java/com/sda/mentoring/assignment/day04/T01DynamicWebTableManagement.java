@@ -14,19 +14,10 @@ public class T01DynamicWebTableManagement {
  Add records to the table using DataProvider
  */
 
-    @DataProvider
-    public Object[][] getRecords() {
-        return new Object[][]{
-                {"johndoe","44",1},
-                {"marystar","55",2},
-                {"tomhawk","28",3},
-                {"timlee","59",1},
-                {"kenjoe","49",3}
-        };
-    }
 
 
-    @Test(dataProvider = "getRecords")
+
+    @Test(dataProvider = "getRecord",dataProviderClass = com.sda.mentoring.utilities.DataProviderUtilities.class)
     public void DynamicWebTableManagement(String username ,String age , int indx)
     {
         Driver.getDriver().get(ConfigReader.getProperty("ac_url"));

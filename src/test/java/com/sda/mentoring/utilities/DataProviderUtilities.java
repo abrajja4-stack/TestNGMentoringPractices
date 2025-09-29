@@ -71,4 +71,15 @@ public class DataProviderUtilities {
 
         };
     }
+
+    @DataProvider
+    public Object[][] getRecord() {
+        return new Object[][]{
+                {"johndoe","44",1},
+                {"marystar","55",2},
+                {"tomhawk","28",3},
+                {"timlee","59",1},
+                {"kenjoe","49",3}
+        };
+    }
 }
