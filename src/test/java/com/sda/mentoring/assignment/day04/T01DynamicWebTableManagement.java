@@ -1,11 +1,8 @@
 package com.sda.mentoring.assignment.day04;
 
-import com.github.javafaker.Faker;
 import com.sda.mentoring.assignment.day04.pagesd4.AddRecordDataProviderpage;
 import com.sda.mentoring.utilities.ConfigReader;
-import com.sda.mentoring.utilities.DataProviderUtilities;
-import com.sda.mentoring.utilities.Driver;
-import org.testng.annotations.DataProvider;
+import com.sda.mentoring.utilities.DriverSengel;
 import org.testng.annotations.Test;
 
 public class T01DynamicWebTableManagement {
@@ -20,7 +17,7 @@ public class T01DynamicWebTableManagement {
     @Test(dataProvider = "getRecord",dataProviderClass = com.sda.mentoring.utilities.DataProviderUtilities.class)
     public void DynamicWebTableManagement(String username ,String age , int indx)
     {
-        Driver.getDriver().get(ConfigReader.getProperty("ac_url"));
+        DriverSengel.getDriver().get(ConfigReader.getProperty("ac_url"));
         AddRecordDataProviderpage providerpage =new AddRecordDataProviderpage();
 
         providerpage
@@ -31,6 +28,6 @@ public class T01DynamicWebTableManagement {
 
 
 
-        Driver.closeDriver();
+        DriverSengel.closeDriver();
     }
 }

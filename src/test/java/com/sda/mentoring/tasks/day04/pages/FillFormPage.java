@@ -1,7 +1,7 @@
 package com.sda.mentoring.tasks.day04.pages;
 
 
-import com.sda.mentoring.utilities.Driver;
+import com.sda.mentoring.utilities.DriverSengel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -20,51 +20,51 @@ public class FillFormPage {
     By gender = By.xpath("//input[@value='male']");
     By generatePasscode = By.xpath("//button[@type='button']");
 
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+    WebDriverWait wait = new WebDriverWait(DriverSengel.getDriver(), Duration.ofSeconds(10));
     public FillFormPage fillName(String name) {
-        Driver.getDriver().findElement(nameField).sendKeys(name);
+        DriverSengel.getDriver().findElement(nameField).sendKeys(name);
         return this;
     }
 
     public FillFormPage fillAge(String age) {
-        Driver.getDriver().findElement(ageField).sendKeys(age);
+        DriverSengel.getDriver().findElement(ageField).sendKeys(age);
         return this;
     }
 
     public FillFormPage fillOptions(String optionsValue) {
-        Select depOpt = new Select(Driver.getDriver().findElement(departmentSelect));
+        Select depOpt = new Select(DriverSengel.getDriver().findElement(departmentSelect));
         depOpt.selectByValue(optionsValue);
         return this;
     }
 
     public FillFormPage fillInterest(String interest) {
-        Driver.getDriver().findElement(By.xpath(String.format(codingInterest,interest))).click();
+        DriverSengel.getDriver().findElement(By.xpath(String.format(codingInterest,interest))).click();
         return this;
     }
 
     public FillFormPage fillGender() {
-        Driver.getDriver().findElement(gender).click();
+        DriverSengel.getDriver().findElement(gender).click();
         return this;
     }
 
     public FillFormPage formSubmit() {
-        Driver.getDriver().findElement(generatePasscode).click();
+        DriverSengel.getDriver().findElement(generatePasscode).click();
         return this;
     }
 
     public boolean isPasscodeSuccesfull() {
-       String text= Driver.getDriver().switchTo().alert().getText();
-        Driver.getDriver().switchTo().alert().accept();
+       String text= DriverSengel.getDriver().switchTo().alert().getText();
+        DriverSengel.getDriver().switchTo().alert().accept();
         String passcode = text.replaceAll("[^0-9]","");
         System.out.println("passcode = " + passcode);
-        Driver.getDriver().switchTo().alert().sendKeys(passcode);
-        Driver.getDriver().switchTo().alert().accept();
-        Driver.getDriver().switchTo().frame(0);
+        DriverSengel.getDriver().switchTo().alert().sendKeys(passcode);
+        DriverSengel.getDriver().switchTo().alert().accept();
+        DriverSengel.getDriver().switchTo().frame(0);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(submitButton)).isDisplayed();
     }
 
     public FillFormPage verifyPasscode() {
-        Assert.assertTrue(Driver.getDriver().switchTo().alert().getText().contains("Your passcode is:"));
+        Assert.assertTrue(DriverSengel.getDriver().switchTo().alert().getText().contains("Your passcode is:"));
         return this;
     }
 }

@@ -2,7 +2,7 @@ package com.sda.mentoring.tasks.day04;
 
 import com.sda.mentoring.tasks.day04.pages.FillFormPage;
 
-import com.sda.mentoring.utilities.Driver;
+import com.sda.mentoring.utilities.DriverSengel;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -19,7 +19,7 @@ public class T0FillForm {
     public void testAddRecord() {
 
 
-       Driver.getDriver().get("https://claruswaysda.github.io/ActionsForm.html");
+       DriverSengel.getDriver().get("https://claruswaysda.github.io/ActionsForm.html");
         FillFormPage fillFormPage = new FillFormPage();
 
         boolean isSubmitButtonVisible =
@@ -43,7 +43,7 @@ public class T0FillForm {
     public void testAddRecord02() {
 
 
-        Driver.getDriver().get("https://claruswaysda.github.io/ActionsForm.html");
+        DriverSengel.getDriver().get("https://claruswaysda.github.io/ActionsForm.html");
         FillFormPage fillFormPage = new FillFormPage();
 
                 fillFormPage
@@ -55,6 +55,6 @@ public class T0FillForm {
                         .formSubmit()
                         .verifyPasscode();
 
-        Driver.closeDriver();
+        DriverSengel.closeDriver();
     }}
 

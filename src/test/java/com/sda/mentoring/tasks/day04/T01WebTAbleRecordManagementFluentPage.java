@@ -2,7 +2,7 @@ package com.sda.mentoring.tasks.day04;
 
 
 import com.sda.mentoring.tasks.day04.pages.ClaruswaySdaPage;
-import com.sda.mentoring.utilities.Driver;
+import com.sda.mentoring.utilities.DriverSengel;
 import org.testng.annotations.Test;
 
 public class T01WebTAbleRecordManagementFluentPage {
@@ -15,7 +15,7 @@ Delete first record you created.
 
     @Test
     public void test01() {
-        Driver.getDriver().get("https://claruswaysda.github.io");
+        DriverSengel.getDriver().get("https://claruswaysda.github.io");
         ClaruswaySdaPage sdaPage = new ClaruswaySdaPage();
         sdaPage
                 .clickWebTable()
